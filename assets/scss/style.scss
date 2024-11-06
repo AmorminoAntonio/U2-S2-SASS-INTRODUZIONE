@@ -1,0 +1,135 @@
+@import "./partials/reboot";
+@import "./partials/colors";
+@import "./partials/fonts";
+@import "./partials/buttons";
+@import "./partials/mixinsGenerics";
+@import "./partials/spacings";
+@import "./partials/animations";
+
+
+$colore-principale: #3498db;
+$colore-secondario: #2ecc71;
+$colore-sfondo: #640fc5;
+$colore-testo: #f4f4f4;
+$colore-navbar: #8b8b8b;
+$colore-sfondo-griglia: #f4f4f4;
+$colore-bordo: #ccc;
+$colore-hover: #000000;
+$spazio-elem: 1rem;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: $colore-sfondo;
+  color: $colore-testo;
+}
+
+h1, h2, h3 {
+  font-family: 'Georgia', serif;
+  font-weight: normal;
+}
+
+
+.navbar {
+  background-color: $colore-navbar;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  
+  .nav-list {
+    margin-right: auto;
+    list-style: none;
+    display: flex;
+
+    li {
+      margin-right: 2rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $colore-principale;
+      }
+    }
+  }
+}
+
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: $colore-sfondo;
+  
+  .hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero-text {
+    flex: 1;
+    padding-right: 2rem;
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: $colore-testo;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+  }
+
+  .hero-image {
+    flex: 1;
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  }
+}
+
+.image-gallery {
+  display: flex;
+  gap: $spazio-elem;
+  padding: $spazio-elem;
+  background-color:  $colore-sfondo-griglia;
+  max-width: 100%;
+  margin: 0 auto;
+
+  .image-item {
+    border: 2px solid $colore-bordo;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
